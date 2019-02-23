@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class ThingController : MonoBehaviour
 {
-    [SerializeField]
     private GameController GC;
+    [SerializeField]
+    private float mass;
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject obj = GameObject.Find("GameController");
+        GC = obj.GetComponent<GameController>();
     }
 
     // Update is called once per frame
@@ -25,11 +27,19 @@ public class ThingController : MonoBehaviour
     void OnMouseDown()
     {
         Debug.Log("catched");
-        GC.getHand().setHolding(this.gameObject);
+        if(GC!=null)GC.getHand().setHolding(this.gameObject);
     }
     void OnMouseUp()
     {
         Debug.Log("left");
-        GC.getHand().setLeave();
+        if(GC!=null)GC.getHand().setLeave();
+    }
+
+    void OnMouseOver()
+    {
+        if(GC!=null){
+            Vector3 movement = GC.getHand().getMovement();
+            transform.position += movement * (1/mass); 
+        }
     }
 }

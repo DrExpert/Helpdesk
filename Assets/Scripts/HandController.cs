@@ -15,6 +15,8 @@ public class HandController : MonoBehaviour
 
     private bool isHolding;
     // Start is called before the first frame update
+
+    private Vector3 lastPos;
     void Start()
     {
         
@@ -23,7 +25,7 @@ public class HandController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+        lastPos = transform.position;
         //Movement
         Vector3 newPos = camera.ScreenToWorldPoint (Input.mousePosition);
         transform.position = new Vector3(newPos.x,newPos.y,0);
@@ -44,7 +46,9 @@ public class HandController : MonoBehaviour
         }
 
     }
-
+    public Vector3 getMovement(){
+        return new Vector3(transform.position.x - lastPos.x, transform.position.y - lastPos.y, 0);
+    }
     public void setHolding(GameObject obj){
         heldObject = obj;
         isHolding = true;
