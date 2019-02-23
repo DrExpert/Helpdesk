@@ -9,6 +9,10 @@ public class ThingController : MonoBehaviour
     private float mass;
     [SerializeField]
     private bool high;
+    [SerializeField]
+    private bool isTrash;
+    [SerializeField]
+    private int points;
     public bool held;
     // Start is called before the first frame update
     void Start()
@@ -30,21 +34,21 @@ public class ThingController : MonoBehaviour
             //spadanie przedmiotu
             Debug.LogWarning("SPADŁO!!!");
             gameObject.SetActive(false);
+            GC.resolveFloor(points);
         }
         if(!GC.getDeskBounds().Contains(zeroHeight) && GC.getTrashBounds().Contains(zeroHeight) && !held){
             //wyrzucanie przedmiotu
-            Debug.LogWarning("W KOSZU!!!");
+            
             gameObject.SetActive(false);
+            GC.resolveTrash(points,isTrash);
         }
     }
 
 
     void OnMouseDown()
-    {
-        Debug.Log("qweqweqweqwe");
+    {        
         if(!high)transform.position = new Vector3(transform.position.x,transform.position.y,-4);
         if(GC!=null){
-            Debug.Log("asdasdasd");
             GC.getHand().setHolding(this.gameObject);
         }
         held = true;
