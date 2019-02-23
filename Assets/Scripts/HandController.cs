@@ -50,11 +50,13 @@ public class HandController : MonoBehaviour
         return new Vector3(transform.position.x - lastPos.x, transform.position.y - lastPos.y, 0);
     }
     public void setHolding(GameObject obj){
+        animator.SetBool("open",false);
         heldObject = obj;
         isHolding = true;
     }
 
     public void setLeave(){
+        animator.SetBool("open",true);
         heldObject = null;
         isHolding = false;
     }
