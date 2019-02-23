@@ -38,6 +38,20 @@ public class HandController : MonoBehaviour
             // Debug.Log("left it");
             animator.SetBool("open",true);
         }
+        if(isHolding){
+            heldObject.transform.position = new Vector3(newPos.x,newPos.y,0);
+            //animacja od trzymania np. (powiększenie czy coś)
+        }
 
+    }
+
+    public void setHolding(GameObject obj){
+        heldObject = obj;
+        isHolding = true;
+    }
+
+    public void setLeave(){
+        heldObject = null;
+        isHolding = false;
     }
 }
