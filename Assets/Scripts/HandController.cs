@@ -28,7 +28,7 @@ public class HandController : MonoBehaviour
         lastPos = transform.position;
         //Movement
         Vector3 newPos = camera.ScreenToWorldPoint (Input.mousePosition);
-        transform.position = new Vector3(newPos.x,newPos.y,0);
+        transform.position = new Vector3(newPos.x,newPos.y,-6);
 
         //Grabbing
         if (Input.GetMouseButtonDown(0)){
@@ -41,7 +41,7 @@ public class HandController : MonoBehaviour
             animator.SetBool("open",true);
         }
         if(isHolding){
-            heldObject.transform.position = new Vector3(newPos.x,newPos.y,0);
+            heldObject.transform.position = new Vector3(newPos.x,newPos.y,heldObject.transform.position.z);
             //animacja od trzymania np. (powiększenie czy coś)
         }
 
@@ -60,4 +60,5 @@ public class HandController : MonoBehaviour
         heldObject = null;
         isHolding = false;
     }
+   
 }
