@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class HandController : MonoBehaviour
 {
+    [SerializeField]
+    private Camera camera;
+
+    [SerializeField]
+    private GameObject heldObject;
+
+    [SerializeField]
+    private Animator animator;
+
+    private bool isHolding;
     // Start is called before the first frame update
     void Start()
     {
@@ -11,8 +21,23 @@ public class HandController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
+        //Movement
+        Vector3 newPos = camera.ScreenToWorldPoint (Input.mousePosition);
+        transform.position = new Vector3(newPos.x,newPos.y,0);
+
+        //Grabbing
+        if (Input.GetMouseButtonDown(0)){
+            // Debug.Log("grabbed");
+            animator.SetBool("open",false);
+
+        }
+        if (Input.GetMouseButtonUp(0)){
+            // Debug.Log("left it");
+            animator.SetBool("open",true);
+        }
+
     }
 }
