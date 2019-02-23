@@ -6,6 +6,8 @@ public class ThingController : MonoBehaviour
 {
     [SerializeField]
     private GameController GC;
+    [SerializeField]
+    private float mass;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,5 +33,10 @@ public class ThingController : MonoBehaviour
     {
         Debug.Log("left");
         GC.getHand().setLeave();
+    }
+    void OnMouseOver()
+    {
+    Vector3 movement = GC.getHand().getMovement();
+    transform.position += movement * (1/mass);
     }
 }
