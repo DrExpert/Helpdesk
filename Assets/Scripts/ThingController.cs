@@ -28,7 +28,7 @@ public class ThingController : MonoBehaviour
             GameObject obj = GameObject.Find("GameController");
             GC = obj.GetComponent<GameController>();
         }
-        Vector3 zeroHeight = new Vector3(transform.position.x, transform.position.y, 0);
+        Vector3 zeroHeight = new Vector3(transform.position.x, transform.position.y, 1);
         // Debug.Log(GC.getDeskBounds().Contains(zeroHeight));
         if(!GC.getDeskBounds().Contains(zeroHeight) && !GC.getTrashBounds().Contains(zeroHeight) && !held){
             //spadanie przedmiotu

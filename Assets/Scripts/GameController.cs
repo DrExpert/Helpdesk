@@ -55,11 +55,11 @@ public class GameController : MonoBehaviour
 
     public int IShallCountFlathThingsBeneath(Collider2D collider){
         int iter = 0;
-        Vector3 zeroHeight = new Vector3(collider.gameObject.transform.position.x, collider.gameObject.transform.position.y, 0);
-        foreach(Collider2D coll in flatThings){
-            if (coll != null && coll.bounds.Contains(zeroHeight)) iter++;
-            //iter=collider.IsTouching(coll)?iter+1:iter;
-        }
+        // Vector3 zeroHeight = new Vector3(collider.gameObject.transform.position.x, collider.gameObject.transform.position.y, 0);
+        // foreach(Collider2D coll in flatThings){
+        //     if (coll != null && coll.bounds.Contains(zeroHeight)) iter++;
+        //     //iter=collider.IsTouching(coll)?iter+1:iter;
+        // }
         return iter;
     } 
 }
