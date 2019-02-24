@@ -31,11 +31,19 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ThingController[] things = GetComponentsInChildren<ThingController>();
+        allThings = new List<ThingController>();
+        flatThings = new List<Collider2D>();
+        ThingController[] things = thingsOnTableObject.GetComponentsInChildren<ThingController>();
+        Debug.Log(things.Length);
+        // for(int i=0;i<things.Length;i++){
+        //     allThings.Add(things[i]);
+        //     if(!things[i].high)flatThings.Add(things[i].gameObject.GetComponent<Collider2D>());
+        // }
         foreach(ThingController thing in things){
             allThings.Add(thing);
             if(!thing.high)flatThings.Add(thing.gameObject.GetComponent<Collider2D>());
         }
+
     }
 
     // Update is called once per frame
