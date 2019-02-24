@@ -7,6 +7,7 @@ TagManager:
   - Trash
   - Thing
   - Hand
+  - QTET
   layers:
   - Default
   - TransparentFX
