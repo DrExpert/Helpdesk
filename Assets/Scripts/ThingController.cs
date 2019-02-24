@@ -10,11 +10,11 @@ public class ThingController : MonoBehaviour
     [SerializeField]
     private bool high;
     [SerializeField]
-    private bool isTrash;
+    public bool isTrash;
     [SerializeField]
     private int points;
     public bool held;
-    private bool alive = true;
+    public bool alive = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,7 +70,7 @@ public class ThingController : MonoBehaviour
     }
     void OnMouseUp()
     {
-        //  Debug.Log(GC.IShallCountFlathThingsBeneath(GetComponent<Collider2D>()));
+        Debug.Log(GC.IshallGetHeight(GetComponent<Collider2D>()));
         held = false;
         // calculate newPosition
         // Debug.Log(0.15f*GC.IShallCountFlathThingsBeneath(GetComponent<Collider2D>()));
