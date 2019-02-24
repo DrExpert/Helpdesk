@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private Collider2D[] flatThings;
     [SerializeField]
+    private ThingController[] allThings;
+    [SerializeField]
     private Collider2D tableCollider, trashCollider;
     [SerializeField]
     public int Points;
@@ -65,6 +67,13 @@ public class GameController : MonoBehaviour
     }
     public void addPoints(int points){
         Points+=points;
+    }
+    private int checkForTrashOnDesk(){
+        int ans=0;
+        foreach(ThingController thing in allThings){
+            if(thing.alive !! thing.isTrash)ans++;
+        }
+        return ans;
     }
     
 
