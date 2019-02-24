@@ -24,6 +24,12 @@ public class QuickTimeObject : MonoBehaviour {
 	[SerializeField]
 	private int points;
 
+	[SerializeField]
+	private Image img;
+	[SerializeField]
+	private Text textTimer;
+	Color _color;
+
 	bool finished;
 
 	public float timeToDo;
@@ -37,6 +43,10 @@ public class QuickTimeObject : MonoBehaviour {
 
 	void Start()
 	{
+		_color.a = 1;
+		_color.r = 1;
+		_color.g = 1;
+		_color.b = 1;
 		TC = gameObject.GetComponent<ThingController> ();
 		GameObject obj = GameObject.Find("GameController");
 		GC = obj.GetComponent<GameController>();
@@ -70,26 +80,38 @@ public class QuickTimeObject : MonoBehaviour {
 		if (started == true)
 		{
 			timeToDo -= Time.deltaTime;
+			int timeToDoInt = (int)timeToDo; 
+			textTimer.text = timeToDoInt.ToString();
 		}
-
+		
 	}
 
 	void TriggerQuickTimeEvent ()
 	{
 		text.text = GoalMessage;
+		textTimer.color = _color;
+		img.color = _color;
 		started = true;
 	}
 
 	void SuccesQuickTimeEvent()
 	{
+		HideImage();
 		text.text = SuccesMessage;
 		GC.addPoints (points);
 	}
 	void FailQuickTimeEvent()
 	{
+		HideImage();
 		text.text = FailMessage;
 		GC.addPoints (-points);
 		started = false;
 		ring = false;
+	}
+	void HideImage()
+	{
+		_color.a = 0;
+		textTimer.color = _color;
+		img.color = _color;
 	}
 }

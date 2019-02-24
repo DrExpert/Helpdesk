@@ -19,7 +19,7 @@ public class HandController : MonoBehaviour
     private Vector3 lastPos;
     void Start()
     {
-        
+        camera = Camera.main;
     }
 
     // Update is called once per frame

@@ -8,18 +8,23 @@ public class ThingController : MonoBehaviour
     [SerializeField]
     private float mass;
     [SerializeField]
-    private bool high;
+    public bool high;
     [SerializeField]
-    private bool isTrash;
+    public bool isTrash;
     [SerializeField]
     private int points;
     public bool held;
-    private bool alive = true;
+    public bool alive = true;
     // Start is called before the first frame update
     void Start()
     {
         GameObject obj = GameObject.Find("GameController");
         GC = obj.GetComponent<GameController>();
+        if(high)transform.position = new Vector3(transform.position.x,  transform.position.y, -4);
+        if(!high && transform.position.z >= 1){
+            float pos = transform.position.z- Mathf.Floor(transform.position.z);
+            transform.position = new Vector3(transform.position.x,  transform.position.y, pos);
+        }
     }
 
     // Update is called once per frame
@@ -70,7 +75,7 @@ public class ThingController : MonoBehaviour
     }
     void OnMouseUp()
     {
-        //  Debug.Log(GC.IShallCountFlathThingsBeneath(GetComponent<Collider2D>()));
+        Debug.Log(GC.IshallGetHeight(GetComponent<Collider2D>()));
         held = false;
         // calculate newPosition
         // Debug.Log(0.15f*GC.IShallCountFlathThingsBeneath(GetComponent<Collider2D>()));
