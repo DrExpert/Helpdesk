@@ -3994,7 +3994,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 722f52bb1177bb6449b44df24abd76d0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8e606a650d924e44284b0a9e30f2f823, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5706,6 +5706,7 @@ MonoBehaviour:
   hand: {fileID: 868470956}
   flatThings:
   - {fileID: 952561693}
+  allThings: []
   tableCollider: {fileID: 771547952}
   trashCollider: {fileID: 2114853091}
   Points: 100
