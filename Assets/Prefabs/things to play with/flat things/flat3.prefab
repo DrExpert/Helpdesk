@@ -64,7 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 7
   high: 0
-  isTrash: 0
+  isTrash: 1
   points: 0
   held: 0
 --- !u!95 &6607880192032519671
