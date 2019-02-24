@@ -84,8 +84,6 @@ public class QuickTimeObject : MonoBehaviour {
 	{
 		text.text = SuccesMessage;
 		GC.addPoints (points);
-
-
 	}
 	void FailQuickTimeEvent()
 	{
