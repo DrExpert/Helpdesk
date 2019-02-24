@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2848585549314363708}
   - component: {fileID: 3488481568639135250}
   - component: {fileID: 6764379877786680031}
+  - component: {fileID: 4942448559668690364}
   m_Layer: 0
   m_Name: lampa
   m_TagString: Untagged
@@ -98,6 +99,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.286129, y: 1.4313502}
   m_EdgeRadius: 0
+--- !u!95 &4942448559668690364
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042580436437727686}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c1b855a1ec1ca6f4190d0afbc5c46aef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7421379022459362676
 GameObject:
   m_ObjectHideFlags: 0
