@@ -71,7 +71,7 @@ public class GameController : MonoBehaviour
     private int checkForTrashOnDesk(){
         int ans=0;
         foreach(ThingController thing in allThings){
-            if(thing.alive !! thing.isTrash)ans++;
+            if(thing.alive && thing.isTrash)ans++;
         }
         return ans;
     }
@@ -84,10 +84,12 @@ public class GameController : MonoBehaviour
             // Vector3 zeroHeight = new Vector3(collider.gameObject.transform.position.x, collider.gameObject.transform.position.y, coll.gameObject.transform.position.z);
             Bounds bounds = new Bounds(new Vector3(collider.bounds.center.x,collider.bounds.center.y,coll.gameObject.transform.position.z),collider.bounds.size);
             if (coll != null && coll.bounds.Intersects(bounds) && coll.transform.position.z >= collider.transform.position.z ){
+                iter++;
                 pos  = coll.transform.position.z + 0.1f;
             } 
             //iter=collider.IsTouching(coll)?iter+1:iter;
         }
+        Debug.Log(iter);
         return iter;
     } 
 }

@@ -70,7 +70,7 @@ public class ThingController : MonoBehaviour
     }
     void OnMouseUp()
     {
-        //  Debug.Log(GC.IShallCountFlathThingsBeneath(GetComponent<Collider2D>()));
+        Debug.Log(GC.IshallGetHeight(GetComponent<Collider2D>()));
         held = false;
         // calculate newPosition
         // Debug.Log(0.15f*GC.IShallCountFlathThingsBeneath(GetComponent<Collider2D>()));

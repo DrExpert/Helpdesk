@@ -237,7 +237,7 @@ PrefabInstance:
     - target: {fileID: 8937135027818895622, guid: a53453c8c2ba24c49b0eec416657f8a4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.0996094
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8937135027818895622, guid: a53453c8c2ba24c49b0eec416657f8a4,
         type: 3}
@@ -844,7 +844,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035119206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8670665, y: -0.23284887, z: -6.0996094}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2009523035}
@@ -1067,7 +1067,7 @@ PrefabInstance:
     - target: {fileID: 3074187802053192933, guid: f599e246b5d0cae4b860e3f0a7defc71,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.0996094
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3074187802053192933, guid: f599e246b5d0cae4b860e3f0a7defc71,
         type: 3}
@@ -1365,6 +1365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsText: {fileID: 906950280}
+  timeText: {fileID: 0}
   hand: {fileID: 868470956}
   flatThings:
   - {fileID: 1731880973}
@@ -1372,6 +1373,7 @@ MonoBehaviour:
   tableCollider: {fileID: 771547952}
   trashCollider: {fileID: 2114853091}
   Points: 100
+  timer: 0
 --- !u!4 &2115017178
 Transform:
   m_ObjectHideFlags: 0
