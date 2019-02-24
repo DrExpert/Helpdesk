@@ -75,6 +75,7 @@ public class ThingController : MonoBehaviour
     }
     void OnMouseUp()
     {
+        GC.checkForTrashOnDesk();
         Debug.Log(GC.IshallGetHeight(GetComponent<Collider2D>()));
         held = false;
         // calculate newPosition

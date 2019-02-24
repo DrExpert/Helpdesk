@@ -74,11 +74,15 @@ public class GameController : MonoBehaviour
     public void addPoints(int points){
         Points+=points;
     }
-    private int checkForTrashOnDesk(){
+    public int checkForTrashOnDesk(){
         int ans=0;
+        Debug.Log(allThings.Count);
         foreach(ThingController thing in allThings){
-            if(thing.alive && thing.isTrash)ans++;
+            if(thing.alive && thing.isTrash){
+                ans++;
+            }
         }
+        Debug.Log(ans);
         return ans;
     }
     
