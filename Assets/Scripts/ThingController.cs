@@ -14,6 +14,7 @@ public class ThingController : MonoBehaviour
     [SerializeField]
     private int points;
     public bool held;
+    private bool alive = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,20 +29,34 @@ public class ThingController : MonoBehaviour
             GameObject obj = GameObject.Find("GameController");
             GC = obj.GetComponent<GameController>();
         }
-        Vector3 zeroHeight = new Vector3(transform.position.x, transform.position.y, 1);
-        // Debug.Log(GC.getDeskBounds().Contains(zeroHeight));
-        if(!GC.getDeskBounds().Contains(zeroHeight) && !GC.getTrashBounds().Contains(zeroHeight) && !held){
+        Vector3 zeroHeight = new Vector3(transform.position.x, transform.position.y, 0);
+
+        if(alive && !GC.getDeskBounds().Contains(zeroHeight) && !GC.getTrashBounds().Contains(zeroHeight) && !held){
             //spadanie przedmiotu
             Debug.LogWarning("SPADŁO!!!");
-            gameObject.SetActive(false);
-            GC.resolveFloor(points);
-        }
-        if(!GC.getDeskBounds().Contains(zeroHeight) && GC.getTrashBounds().Contains(zeroHeight) && !held){
-            //wyrzucanie przedmiotu
+            // gameObject.SetActive(false);
             
-            gameObject.SetActive(false);
-            GC.resolveTrash(points,isTrash);
+            GC.resolveFloor(points);
+            playDeathAnimation();
         }
+        if(alive && !GC.getDeskBounds().Contains(zeroHeight) && GC.getTrashBounds().Contains(zeroHeight) && !held){
+            //wyrzucanie przedmiotu
+            Debug.LogWarning("w koszu!!!");
+            // gameObject.SetActive(false);
+            GC.resolveTrash(points,isTrash);
+            playDeathAnimation();
+        }
+       
+    }
+    
+    void playDeathAnimation(){
+        
+        alive = false;
+        GetComponent<Collider2D>().enabled = false;
+        //Dźwięk na spadanie (if trash etcetera)
+        Animator anim = GetComponent<Animator>();
+
+        if(anim!=null)anim.SetTrigger("Dropit");
     }
 
 
@@ -55,16 +70,17 @@ public class ThingController : MonoBehaviour
     }
     void OnMouseUp()
     {
-        Debug.Log(GC.IShallCountFlathThingsBeneath(GetComponent<Collider2D>()));
+        //  Debug.Log(GC.IShallCountFlathThingsBeneath(GetComponent<Collider2D>()));
         held = false;
         // calculate newPosition
-        if(!high)transform.position = new Vector3(transform.position.x,transform.position.y,(0.15f*GC.IShallCountFlathThingsBeneath(GetComponent<Collider2D>()))-0.1f);
+        // Debug.Log(0.15f*GC.IShallCountFlathThingsBeneath(GetComponent<Collider2D>()));
+        if(!high)transform.position = new Vector3(transform.position.x,transform.position.y,GC.IshallGetHeight(GetComponent<Collider2D>()));
         if(GC!=null)GC.getHand().setLeave();
     }
 
     void OnMouseOver()
     {
-        if(GC!=null){
+        if(GC!=null && alive){
             Vector3 movement = GC.getHand().getMovement();
             transform.position += movement * (1/mass); 
         }

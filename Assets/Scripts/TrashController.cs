@@ -15,12 +15,5 @@ public class TrashController : MonoBehaviour
     {
         
     }
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        Debug.Log("asdasdasd");
-        if(other.tag == "Thing" && !other.gameObject.GetComponent<ThingController>().held){
-            //animacja wyrzucania
-            other.gameObject.SetActive(false);
-        }
-    }
+    
 }

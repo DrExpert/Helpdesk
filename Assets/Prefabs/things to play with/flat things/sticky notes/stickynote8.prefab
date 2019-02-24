@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2241358119928762727}
   - component: {fileID: 7985245764493686550}
   - component: {fileID: 6646990438640331231}
+  - component: {fileID: 4007349246835339196}
   m_Layer: 0
   m_Name: stickynote8
   m_TagString: Untagged
@@ -76,6 +77,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.46517944, y: 0.47486615}
   m_EdgeRadius: 0
+--- !u!95 &4007349246835339196
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5531337098542595574}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c1b855a1ec1ca6f4190d0afbc5c46aef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6121334761143937543
 GameObject:
   m_ObjectHideFlags: 0
