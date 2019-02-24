@@ -5857,7 +5857,7 @@ MonoBehaviour:
   flatThings:
   - {fileID: 952561693}
   allThings: []
-  thingsOnTableObject: {fileID: 0}
+  thingsOnTableObject: {fileID: 1035119207}
   tableCollider: {fileID: 771547952}
   trashCollider: {fileID: 2114853091}
   Points: 100
