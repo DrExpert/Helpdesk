@@ -588,6 +588,23 @@ PrefabInstance:
       propertyPath: img
       value: 
       objectReference: {fileID: 1527890113}
+    - target: {fileID: 3962526518009084408, guid: 53a7ce72636b4d04d874a0bfbf9f4de1,
+        type: 3}
+      propertyPath: obrazek
+      value: 
+      objectReference: {fileID: 1435470495}
+    - target: {fileID: 3962526518009084408, guid: 53a7ce72636b4d04d874a0bfbf9f4de1,
+        type: 3}
+      propertyPath: ringoff
+      value: 
+      objectReference: {fileID: 21300000, guid: 1531642ef5933844b91bf4859654d15a,
+        type: 3}
+    - target: {fileID: 3962526518009084408, guid: 53a7ce72636b4d04d874a0bfbf9f4de1,
+        type: 3}
+      propertyPath: ringon
+      value: 
+      objectReference: {fileID: 21300000, guid: 037533318dffb8843b49af67f76c300f,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53a7ce72636b4d04d874a0bfbf9f4de1, type: 3}
 --- !u!1001 &300310842
@@ -3856,6 +3873,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c978e273965479f42bfff4e133896856, type: 3}
+--- !u!1 &1435470495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1855920537524923150, guid: 53a7ce72636b4d04d874a0bfbf9f4de1,
+    type: 3}
+  m_PrefabInstance: {fileID: 252659565}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1443994503
 PrefabInstance:
   m_ObjectHideFlags: 0

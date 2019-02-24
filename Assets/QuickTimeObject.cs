@@ -30,6 +30,9 @@ public class QuickTimeObject : MonoBehaviour {
 	private Text textTimer;
 	Color _color;
 
+	public GameObject obrazek;
+	public Sprite ringon;
+	public Sprite ringoff;
 	bool finished;
 
 	public float timeToDo;
@@ -88,25 +91,40 @@ public class QuickTimeObject : MonoBehaviour {
 
 	void TriggerQuickTimeEvent ()
 	{
+		SwapImage();
 		text.text = GoalMessage;
 		textTimer.color = _color;
 		img.color = _color;
 		started = true;
 	}
-
+	void SwapImage()
+	{	
+		if(ring)
+		{
+		obrazek.GetComponent<SpriteRenderer>().sprite = ringon ;
+		}else
+		{
+		obrazek.GetComponent<SpriteRenderer>().sprite = ringoff;
+		}
+	}
 	void SuccesQuickTimeEvent()
 	{
+		
 		HideImage();
 		text.text = SuccesMessage;
 		GC.addPoints (points);
+		ring= false;
+		SwapImage();
 	}
 	void FailQuickTimeEvent()
 	{
+		
 		HideImage();
 		text.text = FailMessage;
 		GC.addPoints (-points);
 		started = false;
 		ring = false;
+		SwapImage();
 	}
 	void HideImage()
 	{
