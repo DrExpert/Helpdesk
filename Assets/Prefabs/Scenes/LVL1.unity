@@ -179,6 +179,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -41.794003
       objectReference: {fileID: 0}
+    - target: {fileID: 1996057704974952361, guid: 61cae2a5b0e85214ab7cf23b3e6e9c08,
+        type: 3}
+      propertyPath: points
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61cae2a5b0e85214ab7cf23b3e6e9c08, type: 3}
 --- !u!1 &36896263
@@ -566,7 +571,7 @@ PrefabInstance:
     - target: {fileID: 3962526518009084408, guid: 53a7ce72636b4d04d874a0bfbf9f4de1,
         type: 3}
       propertyPath: requiredPoints
-      value: 110
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 3962526518009084408, guid: 53a7ce72636b4d04d874a0bfbf9f4de1,
         type: 3}
@@ -2841,6 +2846,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -5.083
       objectReference: {fileID: 0}
+    - target: {fileID: 1339752940, guid: fbf450195a8432b469c28ff9d832e178, type: 3}
+      propertyPath: points
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbf450195a8432b469c28ff9d832e178, type: 3}
 --- !u!4 &945235527 stripped
@@ -2876,7 +2885,7 @@ PrefabInstance:
     - target: {fileID: 5001747980234294686, guid: fe8967e82f65c264fb6e0ae5db0f8544,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.0281923
+      value: 0.82
       objectReference: {fileID: 0}
     - target: {fileID: 5001747980234294686, guid: fe8967e82f65c264fb6e0ae5db0f8544,
         type: 3}
@@ -5887,7 +5896,7 @@ MonoBehaviour:
   Points: 100
   FailImage: {fileID: 724552231}
   SuccesImage: {fileID: 66289580}
-  timer: 60
+  timer: 5
 --- !u!4 &2115017178
 Transform:
   m_ObjectHideFlags: 0
