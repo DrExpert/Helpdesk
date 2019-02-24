@@ -5,8 +5,7 @@ using UnityEngine;
 public class ThingController : MonoBehaviour
 {
     private GameController GC;
-    [SerializeField]
-    private AudioClip drop;
+
     [SerializeField]
     private float mass;
     [SerializeField]
@@ -14,7 +13,7 @@ public class ThingController : MonoBehaviour
     [SerializeField]
     public bool isTrash;
     [SerializeField]
-    private int points;
+    private int points = 10;
     public bool held;
     public bool alive = true;
     // Start is called before the first frame update
@@ -27,6 +26,7 @@ public class ThingController : MonoBehaviour
             float pos = transform.position.z- Mathf.Floor(transform.position.z);
             transform.position = new Vector3(transform.position.x,  transform.position.y, pos);
         }
+        points = 10;
     }
 
     // Update is called once per frame
@@ -62,7 +62,7 @@ public class ThingController : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         //Dźwięk na spadanie (if trash etcetera)
         Animator anim = GetComponent<Animator>();
-        if(drop != null)GC.playClip(drop);
+        GC.playClip();
         if(anim!=null)anim.SetTrigger("Dropit");
     }
 

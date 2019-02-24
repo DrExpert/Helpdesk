@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
     [SerializeField]
     private AudioSource audioSource;
+    [SerializeField]
+    private List<AudioClip> clips;
     [SerializeField]
     private Text pointsText;
     [SerializeField]
@@ -32,6 +35,8 @@ public class GameController : MonoBehaviour
 
     [SerializeField]
     private float timer;
+    [SerializeField]
+    private bool mayReset = false;
     public HandController getHand(){
         return hand;
     }
@@ -53,6 +58,11 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(mayReset){
+            if(Input.anyKeyDown){
+                SceneManager.LoadScene(0);
+            }
+        }
         pointsText.text = ""+Points;
         timer -= Time.deltaTime;
         int fixedTimer = (int)timer;
@@ -100,7 +110,7 @@ public class GameController : MonoBehaviour
             }
         }
         //Result(ans);
-        Debug.Log(ans);
+        // Debug.Log(ans);
         return ans;
     }
 
@@ -118,10 +128,12 @@ void Result(int _ans)
              _color.a = 1;
             FailImage.color = _color;
         }
+        mayReset = true;
 }
 
-public void playClip(AudioClip otherClip){
-    audioSource.clip = otherClip;
+public void playClip(){
+    int index = Random.Range(0,clips.Count-1);
+    audioSource.clip = clips[index];
     audioSource.Play();
 }
     public float IshallGetHeight(Collider2D collider){
