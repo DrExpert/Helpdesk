@@ -5874,6 +5874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d1b20ad472b6d24081a6d900b410570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   pointsText: {fileID: 906950280}
   timeText: {fileID: 178091346}
   hand: {fileID: 868470956}
@@ -5886,7 +5887,7 @@ MonoBehaviour:
   Points: 100
   FailImage: {fileID: 724552231}
   SuccesImage: {fileID: 66289580}
-  timer: 2
+  timer: 60
 --- !u!4 &2115017178
 Transform:
   m_ObjectHideFlags: 0

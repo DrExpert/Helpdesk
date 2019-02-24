@@ -60,6 +60,7 @@ public class GameController : MonoBehaviour
         if(timer<=0)
         {
             Result(checkForTrashOnDesk());
+            timer=0;
         }
     }
     public Bounds getDeskBounds(){
