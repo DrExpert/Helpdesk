@@ -5420,6 +5420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2115017178}
   - component: {fileID: 2115017177}
+  - component: {fileID: 2115017179}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -5515,6 +5516,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2115017179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115017176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b3ed484f40da614db40f3efc4a7c84a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2135421310 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6336783901216689320, guid: b02447c1a75f5d54e96bfce775185e50,
@@ -5593,6 +5606,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7861359937123291180, guid: 274628b8c23bea94d91136d865ce7e5e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b2667b40adcf06440a797c46b9df4a3d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 274628b8c23bea94d91136d865ce7e5e, type: 3}
 --- !u!114 &2136649621 stripped
