@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 3074187802053192933}
   - component: {fileID: 853085553340134801}
   - component: {fileID: 2177959619057279645}
+  - component: {fileID: 3369682652752260774}
   m_Layer: 0
   m_Name: dlugopis
   m_TagString: Untagged
@@ -155,3 +156,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.08131027, y: 0.69530153}
   m_EdgeRadius: 0
+--- !u!95 &3369682652752260774
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5682947184300322622}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c1b855a1ec1ca6f4190d0afbc5c46aef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
