@@ -1,7 +1,8 @@
+﻿
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class QuickTimeObject : MonoBehaviour {
 
 	//type
@@ -27,6 +28,7 @@ public class QuickTimeObject : MonoBehaviour {
 
 	public float timeToDo;
 
+    Text text;
 
 	GameController GC;
 	ThingController TC;
@@ -38,6 +40,7 @@ public class QuickTimeObject : MonoBehaviour {
 		TC = gameObject.GetComponent<ThingController> ();
 		GameObject obj = GameObject.Find("GameController");
 		GC = obj.GetComponent<GameController>();
+        text = GameObject.Find("QuickTimeEventsText").GetComponent<Text>();
 	}
 
 	void Update()
@@ -73,20 +76,20 @@ public class QuickTimeObject : MonoBehaviour {
 
 	void TriggerQuickTimeEvent ()
 	{
-		Debug.Log (GoalMessage);
+		text.text = GoalMessage;
 		started = true;
 	}
 
 	void SuccesQuickTimeEvent()
 	{
-		Debug.Log (SuccesMessage);
+		text.text = SuccesMessage;
 		GC.addPoints (points);
 
 
 	}
 	void FailQuickTimeEvent()
 	{
-		Debug.Log (FailMessage);
+		text.text = FailMessage;
 		GC.addPoints (-points);
 		started = false;
 		ring = false;
