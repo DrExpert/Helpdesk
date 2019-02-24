@@ -21,14 +21,25 @@ public class GameController : MonoBehaviour
     [SerializeField]
     public int Points;
 
+
+    public Image FailImage;
+    public Image SuccesImage;
+    Color _color;
+
     [SerializeField]
     private float timer;
     public HandController getHand(){
         return hand;
     }
     // Start is called before the first frame update
+    void Awake()
+    {
+        checkForTrashOnDesk();
+    }
     void Start()
     {
+        _color = Color.white;
+        _color.a = 0;
         
     }
 
@@ -39,6 +50,10 @@ public class GameController : MonoBehaviour
         timer -= Time.deltaTime;
         int fixedTimer = (int)timer;
         timeText.text = fixedTimer.ToString();
+        if(timer<=0)
+        {
+            Result(checkForTrashOnDesk());
+        }
     }
     public Bounds getDeskBounds(){
         Vector3 pos = tableCollider.bounds.center;
@@ -73,10 +88,26 @@ public class GameController : MonoBehaviour
         foreach(ThingController thing in allThings){
             if(thing.alive && thing.isTrash)ans++;
         }
+        //Result(ans);
+        Debug.Log(ans);
         return ans;
     }
-    
 
+void Result(int _ans)
+{
+        if (_ans == 0)
+        {
+            Debug.Log("succes");
+            _color.a = 1;
+            SuccesImage.color = _color;
+        }
+        else if(_ans!=0)
+        {
+            Debug.Log("fail");
+             _color.a = 1;
+            FailImage.color = _color;
+        }
+}
     public float IshallGetHeight(Collider2D collider){
         int iter = 0;
         float pos = 0;
