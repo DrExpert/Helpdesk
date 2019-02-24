@@ -3954,6 +3954,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Desk
       objectReference: {fileID: 0}
+    - target: {fileID: 5114007648514195611, guid: 6aa25e6c10cf3da4888051bd09134673,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5114007648514195610, guid: 6aa25e6c10cf3da4888051bd09134673,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5564,6 +5569,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
+      objectReference: {fileID: 21300000, guid: b2667b40adcf06440a797c46b9df4a3d,
       objectReference: {fileID: 21300000, guid: 4ec7f5cf6983f8447ba5c394829b6486,
         type: 3}
     m_RemovedComponents: []
