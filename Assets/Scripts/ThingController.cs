@@ -6,6 +6,8 @@ public class ThingController : MonoBehaviour
 {
     private GameController GC;
     [SerializeField]
+    private AudioClip drop;
+    [SerializeField]
     private float mass;
     [SerializeField]
     public bool high;
@@ -60,7 +62,7 @@ public class ThingController : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         //Dźwięk na spadanie (if trash etcetera)
         Animator anim = GetComponent<Animator>();
-
+        if(drop != null)GC.playClip(drop);
         if(anim!=null)anim.SetTrigger("Dropit");
     }
 

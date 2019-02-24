@@ -6,6 +6,8 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
     private Text pointsText;
     [SerializeField]
     private Text timeText;
@@ -115,6 +117,11 @@ void Result(int _ans)
              _color.a = 1;
             FailImage.color = _color;
         }
+}
+
+public void playClip(AudioClip otherClip){
+    audioSource.clip = otherClip;
+    audioSource.Play();
 }
     public float IshallGetHeight(Collider2D collider){
         int iter = 0;
