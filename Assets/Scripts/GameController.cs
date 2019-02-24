@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private Collider2D tableCollider, trashCollider;
     [SerializeField]
-    private int Points;
+    public int Points;
 
     public HandController getHand(){
         return hand;
@@ -32,10 +32,14 @@ public class GameController : MonoBehaviour
         pointsText.text = ""+Points;
     }
     public Bounds getDeskBounds(){
-        return tableCollider.bounds;
+        Vector3 pos = tableCollider.bounds.center;
+        Bounds deskBounds = new Bounds(new Vector3(pos.x,pos.y,0),tableCollider.bounds.size);
+        return deskBounds;
     }
     public Bounds getTrashBounds(){
-        return trashCollider.bounds;
+        Vector3 pos = trashCollider.bounds.center;
+        Bounds trashBounds = new Bounds(new Vector3(pos.x,pos.y,0),tableCollider.bounds.size);
+        return trashBounds;
     }
 
     public void resolveFloor(int points){
@@ -50,16 +54,24 @@ public class GameController : MonoBehaviour
             Points = Points-Mathf.Abs(points);
             Debug.LogWarning("POTRZEBNA RZECZ W KOSZU :(((( !!!");
         }
+
+    }
+    public void addPoints(int points){
+        Points+=points;
     }
     
 
-    public int IShallCountFlathThingsBeneath(Collider2D collider){
+    public float IshallGetHeight(Collider2D collider){
         int iter = 0;
-        // Vector3 zeroHeight = new Vector3(collider.gameObject.transform.position.x, collider.gameObject.transform.position.y, 0);
-        // foreach(Collider2D coll in flatThings){
-        //     if (coll != null && coll.bounds.Contains(zeroHeight)) iter++;
-        //     //iter=collider.IsTouching(coll)?iter+1:iter;
-        // }
+        float pos = 0;
+        foreach(Collider2D coll in flatThings){
+            // Vector3 zeroHeight = new Vector3(collider.gameObject.transform.position.x, collider.gameObject.transform.position.y, coll.gameObject.transform.position.z);
+            Bounds bounds = new Bounds(new Vector3(collider.bounds.center.x,collider.bounds.center.y,coll.gameObject.transform.position.z),collider.bounds.size);
+            if (coll != null && coll.bounds.Intersects(bounds) && coll.transform.position.z >= collider.transform.position.z ){
+                pos  = coll.transform.position.z + 0.1f;
+            } 
+            //iter=collider.IsTouching(coll)?iter+1:iter;
+        }
         return iter;
     } 
 }
