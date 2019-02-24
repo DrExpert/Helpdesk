@@ -8,7 +8,7 @@ public class ThingController : MonoBehaviour
     [SerializeField]
     private float mass;
     [SerializeField]
-    private bool high;
+    public bool high;
     [SerializeField]
     public bool isTrash;
     [SerializeField]
@@ -20,6 +20,11 @@ public class ThingController : MonoBehaviour
     {
         GameObject obj = GameObject.Find("GameController");
         GC = obj.GetComponent<GameController>();
+        if(high)transform.position = new Vector3(transform.position.x,  transform.position.y, -4);
+        if(!high && transform.position.z >= 1){
+            float pos = transform.position.z- Mathf.Floor(transform.position.z);
+            transform.position = new Vector3(transform.position.x,  transform.position.y, pos);
+        }
     }
 
     // Update is called once per frame
