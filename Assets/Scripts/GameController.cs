@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour
     [SerializeField]
     private Text pointsText;
     [SerializeField]
+    private Text timeText;
+    [SerializeField]
     private HandController hand;
 
     [SerializeField]
@@ -17,6 +19,8 @@ public class GameController : MonoBehaviour
     [SerializeField]
     public int Points;
 
+    [SerializeField]
+    private float timer;
     public HandController getHand(){
         return hand;
     }
@@ -30,6 +34,9 @@ public class GameController : MonoBehaviour
     void Update()
     {
         pointsText.text = ""+Points;
+        timer -= Time.deltaTime;
+        int fixedTimer = (int)timer;
+        timeText.text = fixedTimer.ToString();
     }
     public Bounds getDeskBounds(){
         Vector3 pos = tableCollider.bounds.center;
